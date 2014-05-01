@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Shows Sign of Product of 3 Real Numbers</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <!--Write a script that shows the sign (+ or -) of the product of three real numbers without calculating it. Use a sequence of if statements.-->
+
+    <div id="js-console">
+        <div>
+            <label for="input-number">X:</label>
+            <input type="text" id="input-number" />
+        </div>
+        <div>
+            <label for="input2-number">Y:</label>
+            <input type="text" id="input2-number" />
+        </div>
+        <div>
+            <label for="input3-number">Z:</label>
+            <input type="text" id="input3-number" />
+        </div>
+        <div>
+            <button onclick="ShowsSignofProduct()">Calculate</button>
+        </div>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function ShowsSignofProduct() {
+            var x = jsConsole.readInteger("#input-number");
+            var y = jsConsole.readInteger("#input2-number");
+            var z = jsConsole.readInteger("#input3-number");
+
+            var countNegative = 0;
+
+            if ((x == 0) || (y == 0) || (z == 0)) {
+                jsConsole.writeLine("The product is 0.");
+            }
+            else {
+                if (x < 0) {
+                    countNegative++;
+                }
+
+                if (y < 0) {
+                    countNegative++;
+                }
+
+                if (z < 0) {
+                    countNegative++;
+                }
+
+                if (countNegative % 2 == 0) {
+                    jsConsole.writeLine("The product of " + x + ", " + y + " and " + z + " is positive.");
+                }
+                else {
+                    jsConsole.writeLine("The product of " + x + ", " + y + " and " + z + " is negative.");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

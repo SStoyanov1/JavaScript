@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Finds Biggest of Three Integers</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <!--Write a script that shows the sign (+ or -) of the product of three real numbers without calculating it. Use a sequence of if statements.-->
+
+    <div id="js-console">
+        <div>
+            <label for="input-number">X:</label>
+            <input type="text" id="input-number" />
+        </div>
+        <div>
+            <label for="input2-number">Y:</label>
+            <input type="text" id="input2-number" />
+        </div>
+        <div>
+            <label for="input3-number">Z:</label>
+            <input type="text" id="input3-number" />
+        </div>
+        <div>
+            <button onclick="FindsBiggestInt()">Calculate</button>
+        </div>
+    </div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function FindsBiggestInt() {
+            var x = jsConsole.readInteger("#input-number");
+            var y = jsConsole.readInteger("#input2-number");
+            var z = jsConsole.readInteger("#input3-number");
+
+            var countNegative = 0;
+            var biggest = 0;
+
+            if (x > biggest) {
+                biggest = x;
+            }
+            if (y > biggest) {
+                biggest = y;
+            }
+            if (z > biggest) {
+                biggest = z;
+            }
+
+            jsConsole.writeLine("The biggest number is " + biggest + ".");
+        }
+    </script>
+</body>
+</html>
