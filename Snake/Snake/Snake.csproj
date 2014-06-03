@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{52D90FDB-AE21-4FBE-8EF0-1E343D0A1F45}</ProjectGuid>
+    <ProjectGuid>{CE2ECE71-3517-4E56-943B-4722AB023216}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Solution__Conditional_Statements_</RootNamespace>
-    <AssemblyName>Solution %27Conditional Statements%27</AssemblyName>
+    <RootNamespace>Snake</RootNamespace>
+    <AssemblyName>Snake</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -57,30 +57,20 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="01. Exchange Values.html" />
-    <Content Include="02. Shows Sign of Product of 3 Real Numbers.html" />
-    <Content Include="03. Finds Biggest of Three Integers.html" />
-    <Content Include="04. Sorts 3 Real Values.html" />
-    <Content Include="05. Shows Name of a Digit.html" />
-    <Content Include="06. Prints Quadratic Equation Real Roots.html" />
-    <Content Include="07. Finds Greatest of Five Variables.html" />
-    <Content Include="08. Coverts Number to Text.html" />
-    <Content Include="scripts\js-console.js" />
-    <Content Include="styles\js-console.css" />
-    <Content Include="styles\js-console.min.css" />
-    <Content Include="Web.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="styles\js-console.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="scripts\snake.js" />
+    <Content Include="snake.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -95,9 +85,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>64712</DevelopmentServerPort>
+          <DevelopmentServerPort>59113</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:64712/</IISUrl>
+          <IISUrl>http://localhost:59113/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
