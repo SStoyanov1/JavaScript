@@ -37,14 +37,10 @@
     });
 
     function drawGame() {
-        // Clear the canvas
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        // Traverse all the body pieces of the snake, starting from the last one
         for (var i = snake.length - 1; i >= 0; i--) {
 
-            // We're only going to perform the collision detection using the head
-            // so it will be handled differently than the rest
             if (i === 0) {
                 switch (direction) {
                     case 0: // Right
@@ -61,8 +57,6 @@
                         break;
                 }
 
-                // Check that it's not out of bounds. If it is show the game over popup
-                // and exit the function.
                 if (snake[0].x < 0 ||
                     snake[0].x >= 40 ||
                     snake[0].y < 0 ||
@@ -70,26 +64,18 @@
                     showGameOver();
                     return;
                 }
-
-                // Detect if we hit food and increase the score if we do,
-                // generating a new food position in the process, and also
-                // adding a new element to the snake array.
+                
                 if (map[snake[0].x][snake[0].y] === 1) {
                     score += 10;
                     map = generateFood(map);
 
-                    // Add a new body piece to the array 
                     snake.push({ x: snake[snake.length - 1].x, y: snake[snake.length - 1].y });
                     map[snake[snake.length - 1].x][snake[snake.length - 1].y] = 2;
 
-                    // If the score is a multiplier of 100 (such as 100, 200, 300, etc.)
-                    // increase the level, which will make it go faster.
                     if ((score % 50) == 0) {
                         level += 1;
                     }
 
-                    // Let's also check that the head is not hitting other part of its body
-                    // if it does, we also need to end the game.
                 } else if (map[snake[0].x][snake[0].y] === 2) {
                     showGameOver();
                     return;
@@ -97,9 +83,7 @@
 
                 map[snake[0].x][snake[0].y] = 2;
             } else {
-                // Remember that when they move, the body pieces move to the place
-                // where the previous piece used to be. If it's the last piece, it
-                // also needs to clear the last position from the matrix
+                
                 if (i === (snake.length - 1)) {
                     map[snake[i].x][snake[i].y] = null;
                 }
@@ -150,9 +134,6 @@
         ctx.fillStyle = '#C5F2AE';
         ctx.strokeStyle = 'darkgreen'; // The border will also be black
 
-        // The border is drawn on the outside of the rectangle, so we'll
-        // need to move it a bit to the right and up. Also, we'll need
-        // to leave a 20 pixels space on the top to draw the interface.
         ctx.fillRect(0, 20, canvas.width - 4, canvas.height - 23);
         ctx.strokeRect(0, 20, canvas.width - 4, canvas.height - 23);
 
@@ -162,10 +143,6 @@
     }
 
     function generateFood(map) {
-        // Generate a random position for the rows and the columns.
-        // We also need to watch so as to not place the food
-        // on the a same matrix position occupied by a part of the
-        // snake's body.
         var numberOfFood;
         if (score === 0 ) {
             numberOfFood = 3;
